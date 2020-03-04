@@ -12,9 +12,7 @@
 import re
 import os
 import shutil
-import subprocess
 import argparse
-import sys
 
 
 # This is to help coaches and graders identify student assignments
@@ -26,7 +24,9 @@ __author__ = "???"
 
 
 def get_special_paths(dir):
-    """get_special_paths(dir) -- returns a list of the absolute paths of the special files in the given directory"""
+    """returns a list of the absolute
+    paths of the special files in the
+    given directory"""
     file_list = os.listdir(dir)
     absolute_path_list = []
     for file in file_list:
@@ -37,7 +37,8 @@ def get_special_paths(dir):
 
 
 def copy_to(paths, dir):
-    """copy_to(paths, dir) given a list of paths, copies those files into the given directory"""
+    """copy_to(paths, dir) given a list
+    of paths, copies those files into the given directory"""
     # if not os.path.exists(dir):
     #     os.makedirs(dir)
     # for path in paths:
@@ -75,7 +76,8 @@ def main():
     all_paths = get_special_paths(args.fromdir)
 
     # Parsing command line arguments is a must-have skill.
-    # This is input data validation.  If something is wrong (or missing) with any
+    # This is input data validation.
+    # If something is wrong (or missing) with any
     # required args, the general rule is to print a usage message and exit(1).
 
     # +++your code here+++
