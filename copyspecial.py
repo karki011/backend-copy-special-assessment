@@ -18,9 +18,31 @@ import argparse
 # This is to help coaches and graders identify student assignments
 __author__ = "???"
 
+"""Suggested functions for your solution(details below):
 
+get_special_paths(dir) -- returns a list of the absolute paths of the special files in the given directory
+copy_to(paths, dir) given a list of paths, copies those files into the given directory
+zip_to(paths, zippath) given a list of paths, zip those files up into the given zipfile"""
 # +++your code here+++
 # Write functions and modify main() to call them
+
+
+def get_special_paths(dir):
+    file_list = os.listdir(dir)
+    absolute_path_list = []
+    for file in file_list:
+        special_file = re.findall(r'__\w+__', file)
+        if special_file:
+            absolute_path_list.append(os.path.abspath(file))
+    return absolute_path_list
+
+
+def copy_to(paths, dir):
+    if not os.path.exists(dir):
+        os.makedirs(dir)
+    for path in paths:
+        shutil.copy(path, dir)
+
 
 def main():
     # This snippet will help you get started with the argparse module.
